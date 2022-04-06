@@ -197,6 +197,7 @@ h3 {
 .overlay {
   color: #fff;
   padding: 0 1rem 2rem;
+  display: flex;
 }
 
 .overlay h1 {
@@ -204,11 +205,17 @@ h3 {
   line-height: 1;
   margin: 0;
   text-shadow: 1px 1px 2px black;
+  color: var(--h3-color);
+}
+
+.overlay p {
+  font-size: clamp(2rem, 9vw, 3rem);
+  justify-items: center;
 }
 
 .overlay h1 span {
   color: #fff;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
   /* screen, overlay, multiply, difference... */
 }
 
@@ -578,6 +585,20 @@ input[type="radio"]:checked::after {
   100% {
     box-shadow: 30px 0 0 #b8c4bb;
     margin-top: 0;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground {
+    width: 300%;
+    left: -100%;
   }
 }
 
